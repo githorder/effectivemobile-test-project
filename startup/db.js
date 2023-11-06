@@ -9,6 +9,9 @@ const sequelize = new Sequelize(
     dialect: "postgres",
     port: 5432,
     logging: false,
+    define: {
+      freezeTableName: true,
+    },
   }
 );
 
