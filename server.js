@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 const startServer = async () => {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({});
     console.log("The database is synced");
 
     server.listen(PORT, () => {

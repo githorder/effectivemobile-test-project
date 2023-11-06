@@ -19,8 +19,14 @@ const UserHistory = sequelize.define("userHistory", {
   },
 });
 
-const getUserHistory = async () => {
+const getUserHistory = async ({ skip, limit, id }) => {
   try {
+    return await UserHistory.findAll({
+      where: { userId: id },
+      order: [["createdAt", "ASC"]],
+      limit,
+      offset: skip,
+    });
   } catch (err) {
     throw new Error(err);
   }
