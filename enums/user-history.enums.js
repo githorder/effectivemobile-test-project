@@ -1,7 +1,6 @@
-const events = (attribute = "attribute") => ({
+const events = {
   CREATED: "User is created",
-  DELETED: "User is deleted",
-  UPDATED: `User's ${attribute} is updated`,
-});
+  UPDATED: "User is updated",
+};
 
 module.exports = { events };

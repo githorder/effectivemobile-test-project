@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 const sequelize = require("../startup/db");
 
-const UserHistory = sequelize.define("UserHistory", {
+const UserHistory = sequelize.define("userHistory", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -19,4 +19,11 @@ const UserHistory = sequelize.define("UserHistory", {
   },
 });
 
-module.exports = UserHistory;
+const getUserHistory = async () => {
+  try {
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+module.exports = { UserHistory, getUserHistory };
