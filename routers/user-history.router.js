@@ -1,4 +1,5 @@
 const express = require("express");
+const { query } = require("express-validator");
 
 const {
   httpGetUserHistory,
@@ -6,6 +7,14 @@ const {
 
 const userHistoryRouter = express.Router();
 
-userHistoryRouter.get("/", httpGetUserHistory);
+userHistoryRouter.get(
+  "/",
+  [
+    query("id").notEmpty().escape(),
+    query("page").escape(),
+    query("limit").escape(),
+  ],
+  httpGetUserHistory
+);
 
 module.exports = userHistoryRouter;
